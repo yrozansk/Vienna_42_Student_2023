@@ -6,21 +6,21 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:37:58 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/06 15:55:09 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:03:15 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 
 int	ft_tolower(char a)
 {
 	if (a >= 65 && a <= 90)
 	{
 		a += 32;
-		return(a); 
+		return (a);
 	}
-	return(a);
+	return (a);
 }
 /*
 int	main(void)

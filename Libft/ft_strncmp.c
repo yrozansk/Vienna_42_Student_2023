@@ -6,12 +6,12 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 19:47:32 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/06 20:08:28 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:17:15 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
+#include <string.h>
+#include <stdio.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {

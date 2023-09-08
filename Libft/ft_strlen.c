@@ -6,23 +6,23 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:56:40 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/08 11:10:07 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:18:56 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-	i++;
+		i++;
 	}
-return (i);
+	return (i);
 }
 /*
 int	main(void)

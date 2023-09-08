@@ -6,21 +6,21 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:16:14 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/06 14:47:45 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:06:09 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 
 int	ft_toupper(char c)
 {
 	if (c >= 97 && c <= 122)
 	{
 		c -= 32;
-		return(c);
+		return (c);
 	}
-	return(c);
+	return (c);
 }
 /*
 int	main(void)

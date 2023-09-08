@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 20:23:31 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/07 21:10:58 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:21:07 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strchr(const char *str, int c)
 	while (*str)
 	{
 		char
-	}
-	
+	}	
 }
-
+/*
 int	main(void)
 {
 	const char str[] = "Hello World";
@@ -35,4 +34,4 @@ int	main(void)
 		printf("Das Zeichen '%c' wurde nicht gefunden\n", character);
 	return(0);
 	}
-}
+}*/

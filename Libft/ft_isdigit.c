@@ -6,12 +6,12 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:42:30 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/06 14:45:21 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:09:07 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 
 int	ft_isdigit(int c)
 {
@@ -19,7 +19,7 @@ int	ft_isdigit(int c)
 	{
 		return (1);
 	}
-return (0);
+	return (0);
 }
 /*
 int	main(void)

@@ -6,12 +6,12 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:03:35 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/06 14:50:41 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/08 14:10:43 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<ctype.h>
-#include<stdio.h>
+#include <ctype.h>
+#include <stdio.h>
 
 int	ft_isascii(int c)
 {
@@ -19,7 +19,7 @@ int	ft_isascii(int c)
 	{
 		return (1);
 	}
-return (0);
+	return (0);
 }
 /*
 int	main(void)
