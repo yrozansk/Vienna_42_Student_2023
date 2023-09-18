@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:10:01 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/18 14:56:38 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:18:04 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	*ft_bzero(void *s, size_t n)
 {
 	size_t		i;
-	char	*ptrstr;
+	char		*ptrstr;
 
 	ptrstr = (char *) s;
 	i = 0;
