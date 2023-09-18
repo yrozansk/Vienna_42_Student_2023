@@ -8,9 +8,9 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c
+# BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c
 
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+# BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 NAME = libft.a
 
