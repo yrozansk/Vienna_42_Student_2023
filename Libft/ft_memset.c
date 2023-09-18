@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 15:37:58 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/14 18:12:54 by yrozansk         ###   ########.fr       */
+/*   Created: 2023/09/12 20:40:40 by yrozansk          #+#    #+#             */
+/*   Updated: 2023/09/18 14:58:26 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
-int	ft_tolower(int a)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	if (a >= 65 && a <= 90)
+	size_t	i;
+	char	*ptrstr;
+
+	ptrstr = (char *) str;
+	i = 0;
+	if (n <= 0)
 	{
-		a += 32;
-		return (a);
+		return (str);
 	}
-	return (a);
+	if (n > 0)
+	{
+		while (i < n)
+		{
+			ptrstr[i] = c;
+			i++;
+		}
+	}
+	return (str);
 }
-/*
-int	main(void)
-{
-	char	c = 'a';
-
-	printf("tolower is %c\n", tolower(c));
-	printf("%c\n", ft_tolower(c));
-	return(0);
-}*/

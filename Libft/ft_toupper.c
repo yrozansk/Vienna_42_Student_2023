@@ -6,14 +6,14 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:16:14 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/08 14:06:09 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:13:08 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 
-int	ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{

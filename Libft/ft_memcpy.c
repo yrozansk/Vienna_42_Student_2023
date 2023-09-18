@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 15:37:58 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/14 18:12:54 by yrozansk         ###   ########.fr       */
+/*   Created: 2023/09/12 18:17:17 by yrozansk          #+#    #+#             */
+/*   Updated: 2023/09/18 14:57:16 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 
-int	ft_tolower(int a)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (a >= 65 && a <= 90)
+	size_t	i;
+
+	i = 0;
+	if (!dest && !src)
+		return (NULL);
+	while (i < n)
 	{
-		a += 32;
-		return (a);
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	return (a);
+	return (dest);
 }
 /*
-int	main(void)
+int	main (void) 
 {
-	char	c = 'a';
+	const char src[50] = "https://www.tutorialspoint.com";
+	char dest[50];
 
-	printf("tolower is %c\n", tolower(c));
-	printf("%c\n", ft_tolower(c));
+	printf("before ft_memcpy is: %s\n", dest);
+	ft_memcpy(dest, src, 30);
+	printf("after ft_memcpy is: %s\n", dest);
+
 	return(0);
 }*/

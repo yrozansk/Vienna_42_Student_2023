@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 14:47:06 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/08 14:55:33 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:55:39 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check(char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	res;
 	int	sign;

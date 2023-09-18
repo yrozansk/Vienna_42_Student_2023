@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:56:40 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/08 14:18:56 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:15:05 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_strlen(char *str)
 /*
 int	main(void)
 {
-	char c[10] = "ajdbjdfbss";
+	char c[10] = "abcdefg";
 
-	printf("strlen is: %lu\n", strlen(c));
+	printf("strlen is: %lu\n", strlen(c)) ;
 	printf("%d\n", ft_strlen(c));
 	return (0);
 }*/
