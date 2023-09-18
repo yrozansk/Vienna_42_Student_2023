@@ -6,54 +6,67 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:12:05 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/18 19:35:52 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/18 21:14:39 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
+int	ft_destbig(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
+{
+	int	z;
+
+	z = n;
+	z--;
+	while (z >= 0)
+	{
+		(ptrdest[z]) = (ptrsrc[z]);
+		z--;
+	}
+	return (*ptrdest);
+}
+
+int	ft_destsmall(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
+{
+	unsigned long int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		(ptrdest[i]) = (ptrsrc[i]);
+		i++;
+	}
+	return (*ptrdest);
+}
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int				z;
-	int				i;
 	unsigned char	*ptrdest;
 	unsigned char	*ptrsrc;
 
 	ptrdest = (unsigned char *) dest;
 	ptrsrc = (unsigned char *) src;
-	z = n;
-	i = 0;
 	if (!dest && !src)
 		return (NULL);
 	if (ptrdest > ptrsrc)
 	{
-		z--;
-		while (z >= 0)
-		{
-			(ptrdest[z]) = (ptrsrc[z]);
-			z--;
-		}
+		ft_destbig(ptrdest, ptrsrc, n);
 	}
 	if (ptrdest < ptrsrc)
 	{
-		while (i < n)
-		{
-			(ptrdest[i]) = (ptrsrc[i]);
-			i++;
-		}
-	}	
+		ft_destsmall(ptrdest, ptrsrc, n);
+	}
 	return (dest);
 }
 /*
 int	main (void) 
 {
-	const char src[50] = "https://www.tutorialspoint.com";
-	char dest[50];
+	char src[100] = "I bins der Weinachtsmann - memmove";
+	memmove(src + 13, src + 10, 5);
+	printf("%s\n", src);
 
-	printf("Before ft_memmove dest: %s\nsrc = %s\n", dest, src); 
-	ft_memmove(dest, src, 3);
-	printf("After ft_memmove dest: %s\nsrc = %s\n\n", dest, src);
-	
-	return(0);
+	char lll[100] = "I bins der Weinachtsmann - ft_memmove";
+	ft_memmove(lll + 13, lll + 10, 5);
+	printf("%s\n", lll);
 }*/
