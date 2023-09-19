@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 14:47:06 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/14 17:55:39 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:11:39 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	ft_atoi(const char *str)
 	{
 		i++;
 	}
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			sign = sign * -1;
-		}
 		i++;
+		if (str[i] == '-' || str[i] == '+')
+			return (0);
 	}
 	while (str[i] != '\0' && str[i] <= '9' && str[i] >= '0')
 	{
@@ -53,11 +53,12 @@ int	ft_atoi(const char *str)
 /*
 int	main(void)
 {
-	char	*str = "--+-+1348afr579";
-	int		atoi = ft_atoi(str);
-//	int		atoi1 = atoi(str);
+	char	*str1 = "  -1348afr579";
+	char	*str2 = "  -1348afr579";
+	int		atoi1= atoi(str1);
+	int		atoi2 = ft_atoi(str2);
 
-//	printf("%s", atoi1);
-	printf("%d", atoi);
+	printf("%d\n", atoi1);
+	printf("%d\n", atoi2);
 	return (0);
 }*/
