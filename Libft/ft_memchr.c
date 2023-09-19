@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 14:10:30 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/18 14:57:00 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:33:20 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 
 	ptrstr = (unsigned char *) str;
 	i = 0;
-	while (i != ++n)
+	while (i != n)
 	{
 		if (ptrstr[i] == c)
 		{
@@ -34,10 +34,10 @@ void	*ft_memchr(const void *str, int c, size_t n)
 /*
 int main () 
 {
-	const char str[] = "Hello. I want to eat.";
-	const char ch = '.';
-	const char str1[] = "Hello. I want to eat.";
-	const char ch1 = '.';
+	char str[] = "Hello.";
+	char ch = '6';
+	char str1[] = "Hello.";
+	char ch1 = '6';
 	char *ret;
 	char *result;
 
