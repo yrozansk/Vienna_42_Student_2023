@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:08:51 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/14 18:02:21 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:20:12 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	while ((string1[i] || string2[i]) && (i < n))
 	{
 		if (string1[i] != string2[i])
-			return (string1[i] - string2[i]);
+			return ((int)(string1[i] - string2[i]));
 		i++;
 	}
 	return (0);
@@ -33,13 +33,13 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 /*
 int main (void) 
 {
-	char str1[15] = "1";
-	char str2[15] = "1";
+	char str1[15] = "200";
+	char str2[15] = "0";
 	int ret;
 	int result;
 
-	ret = memcmp(str1, str2, 5);
-	result = ft_memcmp(str1, str2, 5);
+	ret = memcmp(str1, str2, 2);
+	result = ft_memcmp(str1, str2, 2);
 
 	if(ret > 0) {
 		printf("memcmp str2 is less than str1\n");
