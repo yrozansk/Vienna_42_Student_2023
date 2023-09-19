@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 12:08:51 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/19 16:35:05 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:07:14 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while ((string1[i] || string2[i]) && (i < n))
+	while (i < n)
 	{
 		if (string1[i] != string2[i])
 			return ((string1[i] - string2[i]));
