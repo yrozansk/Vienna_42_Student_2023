@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:16:49 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/20 14:57:18 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:54:27 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	c;
 
-	i = 0;
 	c = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
 	while (c < len && big[c])
 	{
+		i = 0;
 		while (c < len && little[i] && big[c] && little[i] == big[c])
 		{
 			i++;
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-/*
+
 int	main(void)
 {
 	const char *big = "Foo Bar Baz";
@@ -43,11 +43,11 @@ int	main(void)
 	char *result1;
 	char *result2;
 
-	result1 = strnstr(big, little, 9);
-	result2 = ft_strnstr(big, little, 9);
+	result1 = strnstr(big, little, 5);
+	result2 = ft_strnstr(big, little, 5);
 	printf("%s\n", result1);
 	printf("%s\n", result2);
 	return (0);
-}*/
+}
 // Not Ready (PS: cc with "-lbsd" Flag &
 // use "#include<bsd/string.h>". Do the same with "strnstr" )
