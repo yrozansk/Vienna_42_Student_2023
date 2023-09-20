@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 20:16:49 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/20 15:54:27 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:03:21 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	const char *big = "Foo Bar Baz";
@@ -48,6 +48,6 @@ int	main(void)
 	printf("%s\n", result1);
 	printf("%s\n", result2);
 	return (0);
-}
+}*/
 // Not Ready (PS: cc with "-lbsd" Flag &
 // use "#include<bsd/string.h>". Do the same with "strnstr" )
