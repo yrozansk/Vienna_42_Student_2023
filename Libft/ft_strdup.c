@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:13:13 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/20 17:22:39 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:37:32 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strdup(const char *s)
 	i = -1;
 	s_len = strlen(s);
 	new = malloc((s_len + 1) * sizeof(char));
+	if (new == NULL)
+		return (NULL);
 	while (s[++i])
 		new[i] = s[i];
 	new[i] = '\0';
