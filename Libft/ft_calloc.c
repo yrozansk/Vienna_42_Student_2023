@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:59:51 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/21 14:15:12 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:39:33 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*str;
 	unsigned char	*ptrstr;
-	
+
 	if ((unsigned long long) nmemb * size > 18446744073709551615ULL)
 		return (malloc(0));
-	if (nmemb == 0)	
+	if (nmemb == 0)
 		return (malloc(0));
 	str = malloc (nmemb * size);
 	if (str == NULL)
