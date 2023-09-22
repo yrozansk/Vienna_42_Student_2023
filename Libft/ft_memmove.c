@@ -6,14 +6,14 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 19:12:05 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/18 21:14:39 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:43:55 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-int	ft_destbig(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
+static int	destbigger(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
 {
 	int	z;
 
@@ -27,7 +27,7 @@ int	ft_destbig(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
 	return (*ptrdest);
 }
 
-int	ft_destsmall(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
+static int	destsmaller(unsigned char *ptrdest, unsigned char *ptrsrc, size_t n)
 {
 	unsigned long int	i;
 
@@ -51,11 +51,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (ptrdest > ptrsrc)
 	{
-		ft_destbig(ptrdest, ptrsrc, n);
+		destbigger(ptrdest, ptrsrc, n);
 	}
 	if (ptrdest < ptrsrc)
 	{
-		ft_destsmall(ptrdest, ptrsrc, n);
+		destsmaller(ptrdest, ptrsrc, n);
 	}
 	return (dest);
 }

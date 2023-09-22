@@ -6,14 +6,14 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 14:47:06 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/19 20:11:39 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:44:25 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	check(char c)
+static int	check(char c)
 {
 	if (c == ' ' || c == '\f'
 		|| c == '\n' || c == '\r'
