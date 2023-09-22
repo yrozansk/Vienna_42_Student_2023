@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:49:26 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/21 18:38:01 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:19:13 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,29 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t		c;
-	char		*substring;
+	char	*ret;
 
-	c = 0;
-	if (s == (void *)0 || start >= ft_strlen((char *)s))
+	if (!s)
 	{
-		return (ft_calloc(1, 1));
+		return (0);
 	}
-	substring = malloc(len + 1);
-	if (substring == NULL)
-		return (NULL);
-	while (c != len && s[start] != '\0')
-	{
-		substring[c] = s[start];
-		c++;
-		start++;
-	}
-	return (substring);
+	if (ft_strlen((char *)s) < (int)start)
+		len = 0;
+	if (ft_strlen((char *)s + start) < (int)len)
+		len = ft_strlen((char *)s + start);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (0);
+	ft_strlcpy(ret, (char *)s + start, len + 1);
+	return (ret);
 }
 /*
 int main(void)
 {
-	char const		*s = "H";
-	unsigned int	start = 2;	
+	char const		*s = "Hallo";
+	unsigned int	start = 3;	
 	size_t			i = 3;
 	char			*substring;
 
