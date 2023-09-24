@@ -14,53 +14,30 @@
 #include <stdlib.h>
 #include "libft.h"
 
-static int	ft_len(char s1, char s2)
-{
-	int	s1_len;
-	int	s2_len;
-	int	result;
-
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	result = s1_len + s2_len;
-	return (result);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*ret;
-	int		i;
-	int		c;
+	char	*str;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	ret = malloc((ft_len((char *)s1, (char *)s2) + 1) * sizeof(char));
-	i = 0;
-	c = 0;
-	while (*s1 || *s2)
-	{
-		while (s1[i] != '\0')
-		{
-			ret[i] = s1[i];
-			i++;
-		}
-		while (s2[c] != '\0')
-		{
-			ret[i] = s2[c];
-			i++;
-			c++;
-		}
-		ret[i] = '\0';
-		return (ret);
-	}
-	return (NULL);
+	s1_len = ft_strlen((char *)s1);
+	s2_len = ft_strlen((char *)s2);
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, (char *)s1, s1_len + 1);
+	ft_strlcat(str + (s1_len), s2, s2_len + 1);
+	return (str);
 }
-
-int	main(void)
+/*
+int main()
 {
-	const char	*String1 = "Hello";
-	const char	*String2 = "World";
-	char		*Connect;
+	char s1[] = "peanut";
+	char s2[] = "butter";
 
-	Connect = ft_strjoin(String1, String2);
-	printf("%s\n", Connect);
-	return(0);
-}
+	printf("%s\n", ft_strjoin(s1, s2));
+
+	return 0;
+}*/
