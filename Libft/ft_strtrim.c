@@ -14,11 +14,11 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	front;
 	size_t	rear;
-	char 	*str;
+	char	*str;
 
 	str = 0;
 	if (s1 != 0 && set != 0)
@@ -35,10 +35,10 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-
+/*
 int main(void)
 {
 	printf("%s\n", ft_strtrim("abcdefg" , "abc"));
 	printf("%s\n", ft_strtrim("xavocadoyz", "xyz"));
 	return 0;
-}
+}*/

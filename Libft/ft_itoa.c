@@ -31,35 +31,40 @@ static size_t	get_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static void	fill_str(char *str, int n, size_t len)
 {
-	size_t	len;
-	size_t	i;
-	char* result;
-
-	len = get_len(n);
-	result = (char*)malloc(len + 1);
-	if (!result) 
-		return (NULL);
-	result[len] = '\0';
+	str[len] = '\0';
 	if (n < 0)
 	{
-		result[0] = '-';
-		i = 1;
+		str[0] = '-';
+		len--;
 	}
-	else
-		i = 0;
-	while (len-- > i)
+	while (len > 0)
+	{
 		if (n < 0)
 		{
-			result[len] = '0' + n % 10 * (-1);
+			str[len] = '0' - (n % 10);
 			n = n / 10;
 		}
 		else
 		{
-			result[len] = '0' + n % 10;
+			str[len - 1] = '0' + (n % 10);
 			n = n / 10;
 		}
+		len--;
+	}
+}
+
+char	*ft_itoa(int n)
+{
+	size_t	len;
+	char	*result;
+
+	len = get_len(n);
+	result = (char *)malloc(len + 1);
+	if (!result)
+		return (NULL);
+	fill_str(result, n, len);
 	return (result);
 }
 /*
