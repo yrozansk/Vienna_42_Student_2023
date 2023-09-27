@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:37:58 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/14 18:12:54 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:28:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 
-int	ft_tolower(int a)
+int	ft_tolower(int c)
 {
-	if (a >= 65 && a <= 90)
+	if (c >= 65 && c <= 90)
 	{
-		a += 32;
-		return (a);
+		c += 32;
+		return (c);
 	}
-	return (a);
+	return (c);
 }
 /*
 int	main(void)

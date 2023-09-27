@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:49:26 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/22 12:19:13 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/27 17:30:35 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	{
 		return (0);
 	}
-	if (ft_strlen((char *)s) < (int)start)
-		len = 0;
-	if (ft_strlen((char *)s + start) < (int)len)
-		len = ft_strlen((char *)s + start);
-	ret = malloc(sizeof(char) * (len + 1));
+	if (ft_strlen(s) <= start)
+		return (ft_strdup(""));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	ret = malloc(len + 1);
 	if (!ret)
 		return (0);
 	ft_strlcpy(ret, (char *)s + start, len + 1);
@@ -38,9 +38,9 @@ int main(void)
 	char const		*s = "Hallo";
 	unsigned int	start = 3;	
 	size_t			i = 3;
-	char			*substring;
-
-	substring = ft_substr(s, start, i);
-	printf("%s\n", substring);
+	char			*res;
+	
+	res = ft_substr("hola", 4294967295, 0);
+	printf("%s\n", res);
 	return 0;
 }*/
