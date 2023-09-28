@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:54:53 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 22:36:42 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:11:00 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,10 @@ void	ft_putstr_fd(char *s, int fd)
 		s++;
 	}
 }
+/*
+int	main(void)
+{
+    char *message = "Hallo, Welt!";
+    ft_putstr_fd(message, 1);    
+    return (0);
+}*/

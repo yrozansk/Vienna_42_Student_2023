@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 13:48:17 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/09/24 14:15:40 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 19:53:03 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 /*
-int main()
+int	main()
 {
 	char s1[] = "peanut";
 	char s2[] = "butter";
-
 	printf("%s\n", ft_strjoin(s1, s2));
-
-	return 0;
+	return (0);
 }*/

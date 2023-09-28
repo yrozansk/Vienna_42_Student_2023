@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:24:39 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 22:36:49 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:44:36 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,29 @@ char	**ft_split(char const *s, char c)
 	strlist[i] = NULL;
 	return (strlist);
 }
+/*
+int	main(void)
+{
+	const char *input_string = "Dies ist ein Beispieltext";
+	char delimiter = ' ';
+
+	// Aufruf der ft_split-Funktion
+	char **result = ft_split(input_string, delimiter);
+
+	if (result)
+	{
+		// Ausgabe der aufgeteilten Strings
+		for (int i = 0; result[i] != NULL; i++)
+		{
+			printf("String %d: %s\n", i, result[i]);
+		}
+
+		// Speicher freigeben
+		result = ft_freeall(result);
+	}
+	else
+	{
+		printf("Fehler beim Aufteilen des Strings.\n");
+	}
+    return (0);
+}*/

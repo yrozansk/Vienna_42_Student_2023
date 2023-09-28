@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:47:22 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 22:36:32 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:11:20 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,10 @@ void	ft_putchar_fd(char c, int fd)
 		return ;
 	write(fd, &c, 1);
 }
+/*
+int	main(void)
+{
+	char character = 'A';
+	ft_putchar_fd(character, 1);
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:33:18 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 22:36:55 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:10:30 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
+/*
+void	print_char_index(unsigned int index, char *c)
+{
+	printf("Character at index %d is: %c\n", index, *c);
+}
+
+int	main(void)
+{
+	char input_string[] = "Hello, World!";
+	ft_striteri(input_string, &print_char_index);
+	return (0);
+}*/

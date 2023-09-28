@@ -6,7 +6,7 @@
 /*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:12:55 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 22:36:40 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:11:07 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,11 @@ void	ft_putnbr_fd(int n, int fd)
 		str = '0' + n;
 	write(fd, &str, 1);
 }
+/*
+int	main(void)
+{
+	int number = 12345;   
+	ft_putnbr_fd(number, 1);   
+	return (0);
+}
+*/
