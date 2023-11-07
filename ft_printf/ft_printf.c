@@ -3,41 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:16:38 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/10/31 15:23:15 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:43:47 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<unistd.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
 
 int	ft_putchar(int s)
-{	
+{
 	write(1, &s, 1);
-	return(1);
+	return (1);
 }
 
-int ft_print_string(char *s)
+int	ft_print_string(char *s)
 {
-	int i;
+	int	i;
+
 	while (s[i] != '\0')
 	{
 		ft_putchar(s[i]);
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 void	ft_print_adress(unsigned long long int m, int *len)
 {
-	char	c;
-	char	*Hexa;
-	unsigned long int n;
+	char				c;
+	char				*hexa;
+	unsigned long int	n;
 
 	n = (unsigned long long int) m;
-	Hexa = "0123456789abcdef";
+	hexa = "0123456789abcdef";
 	if (n > 16)
 	{
 		ft_print_adress(n / 16, len);
@@ -45,7 +47,7 @@ void	ft_print_adress(unsigned long long int m, int *len)
 	}
 	else
 	{
-		c = Hexa[n];
+		c = hexa[n];
 		*len += ft_putchar(c);
 	}
 }
@@ -58,7 +60,7 @@ void	ft_print_int(int n, int *len)
 	{
 		ft_print_int(n / 10, len);
 		*len += ft_putchar('8');
-		return;
+		return ;
 	}
 	else if (n < 0)
 	{
@@ -83,7 +85,7 @@ void	ft_print_unsignedint(unsigned int n, int *len)
 	{
 		ft_print_unsignedint(n / 10, len);
 		*len += ft_putchar('5');
-		return;
+		return ;
 	}
 	if (n >= 10)
 	{
@@ -95,42 +97,42 @@ void	ft_print_unsignedint(unsigned int n, int *len)
 	*len += ft_putchar(str);
 }
 
-void	ft_print_hexadecimal_S(int m, int *len)
+void	ft_print_hexadecimal_s(int m, int *len)
 {
-	char	c;
-	char	*Hexa;
-	unsigned int n;
+	char			c;
+	char			*hexa;
+	unsigned int	n;
 
 	n = (unsigned int) m;
-	Hexa = "0123456789abcdef";
+	hexa = "0123456789abcdef";
 	if (n > 16)
 	{
-		ft_print_hexadecimal_S(n / 16, len);
-		ft_print_hexadecimal_S(n % 16, len);
+		ft_print_hexadecimal_s(n / 16, len);
+		ft_print_hexadecimal_s(n % 16, len);
 	}
 	else
 	{
-		c = Hexa[n];
+		c = hexa[n];
 		*len += ft_putchar(c);
 	}
 }
 
-void	ft_print_hexadecimal_B(int m, int *len)
+void	ft_print_hexadecimal_b(int m, int *len)
 {
-	char	c;
-	char	*Hexa;
-	unsigned int n;
+	char			c;
+	char			*hexa;
+	unsigned int	n;
 
 	n = (unsigned int) m;
-	Hexa = "0123456789ABCDEF";
+	hexa = "0123456789ABCDEF";
 	if (n > 16)
 	{
-		ft_print_hexadecimal_B(n / 16, len);
-		ft_print_hexadecimal_B(n % 16, len);
+		ft_print_hexadecimal_b(n / 16, len);
+		ft_print_hexadecimal_b(n % 16, len);
 	}
 	else
 	{
-		c = Hexa[n];
+		c = hexa[n];
 		*len += ft_putchar(c);
 	}
 }
@@ -138,6 +140,7 @@ void	ft_print_hexadecimal_B(int m, int *len)
 int	ft_character(char s, va_list args)
 {
 	int	printcount;
+
 	if (s == 'c')
 		printcount += ft_putchar(va_arg(args, int));
 	else if (s == 's')
@@ -153,21 +156,22 @@ int	ft_character(char s, va_list args)
 	else if (s == 'u')
 		ft_print_unsignedint(va_arg(args, int), &printcount);
 	else if (s == 'x')
-		ft_print_hexadecimal_S(va_arg(args, int), &printcount);
+		ft_print_hexadecimal_s(va_arg(args, int), &printcount);
 	else if (s == 'X')
-		ft_print_hexadecimal_B(va_arg(args, int), &printcount);	
+		ft_print_hexadecimal_b(va_arg(args, int), &printcount);
 	else if (s == '%')
 		printcount += ft_putchar('%');
-	
-	return(printcount);
+	return (printcount);
 }
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	unsigned int printcount = 0;
-	int i = 0;
-	va_list args;
+	unsigned int	printcount;
+	int				i;
+	va_list			args;
 
+	printcount = 0;
+	i = 0;
 	if (!s)
 		return (-1);
 	va_start(args, s);
@@ -182,8 +186,8 @@ int ft_printf(const char *s, ...)
 			printcount += ft_putchar(s[i]);
 		i++;
 	}
-	va_end(args);
-	return(printcount);
+	va_end (args);
+	return (printcount);
 }
 /*
 int main()
@@ -194,7 +198,7 @@ int main()
 	char c = 50;
 	i = 0;
 	ft_printf(NULL);
-	printf("\nexpected: %i \n", printf		("expected: Hello World das %s ist %p ein test mit hex ", s));
+	printf("\nexpected: %i \n", printf		("expected: Hello World das  %s ist %p ein test mit hex ", s));
 	printf("\nresult:   %i \n", ft_printf	("result:   Hello World das %s ist %p ein test mit hex ", s));
 	return(0);
 }
