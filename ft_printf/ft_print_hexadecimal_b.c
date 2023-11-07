@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hexadecimal_b.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:19:38 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 14:20:59 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:39:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_hexadecimal_b(int m, int *len)
 
 	n = (unsigned int) m;
 	hexa = "0123456789ABCDEF";
-	if (n > 16)
+	if (n >= 16)
 	{
 		ft_print_hexadecimal_b(n / 16, len);
 		ft_print_hexadecimal_b(n % 16, len);

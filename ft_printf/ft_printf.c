@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:16:38 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 16:04:27 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:48:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_character(char s, va_list args)
 	{
 		printcount += ft_putchar('0');
 		printcount += ft_putchar('x');
-		ft_print_adress((unsigned long long)va_arg(args, void *), &printcount);
+		ft_print_adress((unsigned long long)va_arg(args, int), &printcount);
 	}
 	else if (s == 'd' || s == 'i')
 		ft_print_int(va_arg(args, int), &printcount);
