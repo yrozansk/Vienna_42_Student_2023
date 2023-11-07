@@ -3,144 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:16:38 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 12:43:47 by codespace        ###   ########.fr       */
+/*   Updated: 2023/11/07 16:04:27 by yrozansk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-
-int	ft_putchar(int s)
-{
-	write(1, &s, 1);
-	return (1);
-}
-
-int	ft_print_string(char *s)
-{
-	int	i;
-
-	while (s[i] != '\0')
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
-}
-
-void	ft_print_adress(unsigned long long int m, int *len)
-{
-	char				c;
-	char				*hexa;
-	unsigned long int	n;
-
-	n = (unsigned long long int) m;
-	hexa = "0123456789abcdef";
-	if (n > 16)
-	{
-		ft_print_adress(n / 16, len);
-		ft_print_adress(n % 16, len);
-	}
-	else
-	{
-		c = hexa[n];
-		*len += ft_putchar(c);
-	}
-}
-
-void	ft_print_int(int n, int *len)
-{
-	char	str;
-
-	if (n == -2147483648)
-	{
-		ft_print_int(n / 10, len);
-		*len += ft_putchar('8');
-		return ;
-	}
-	else if (n < 0)
-	{
-		*len += ft_putchar('-');
-		n *= -1;
-	}
-	if (n >= 10)
-	{
-		ft_print_int(n / 10, len);
-		str = '0' + n % 10;
-	}
-	else
-		str = '0' + n;
-	*len += ft_putchar(str);
-}
-
-void	ft_print_unsignedint(unsigned int n, int *len)
-{
-	char	str;
-
-	if (n == 4294967295)
-	{
-		ft_print_unsignedint(n / 10, len);
-		*len += ft_putchar('5');
-		return ;
-	}
-	if (n >= 10)
-	{
-		ft_print_unsignedint(n / 10, len);
-		str = '0' + n % 10;
-	}
-	else
-		str = '0' + n;
-	*len += ft_putchar(str);
-}
-
-void	ft_print_hexadecimal_s(int m, int *len)
-{
-	char			c;
-	char			*hexa;
-	unsigned int	n;
-
-	n = (unsigned int) m;
-	hexa = "0123456789abcdef";
-	if (n > 16)
-	{
-		ft_print_hexadecimal_s(n / 16, len);
-		ft_print_hexadecimal_s(n % 16, len);
-	}
-	else
-	{
-		c = hexa[n];
-		*len += ft_putchar(c);
-	}
-}
-
-void	ft_print_hexadecimal_b(int m, int *len)
-{
-	char			c;
-	char			*hexa;
-	unsigned int	n;
-
-	n = (unsigned int) m;
-	hexa = "0123456789ABCDEF";
-	if (n > 16)
-	{
-		ft_print_hexadecimal_b(n / 16, len);
-		ft_print_hexadecimal_b(n % 16, len);
-	}
-	else
-	{
-		c = hexa[n];
-		*len += ft_putchar(c);
-	}
-}
+#include "ft_printf.h"
 
 int	ft_character(char s, va_list args)
 {
 	int	printcount;
 
+	printcount = 0;
 	if (s == 'c')
 		printcount += ft_putchar(va_arg(args, int));
 	else if (s == 's')
@@ -189,17 +68,3 @@ int	ft_printf(const char *s, ...)
 	va_end (args);
 	return (printcount);
 }
-/*
-int main()
-{
-	int i;
-	int n = 1000;
-	char *s = "armband";
-	char c = 50;
-	i = 0;
-	ft_printf(NULL);
-	printf("\nexpected: %i \n", printf		("expected: Hello World das  %s ist %p ein test mit hex ", s));
-	printf("\nresult:   %i \n", ft_printf	("result:   Hello World das %s ist %p ein test mit hex ", s));
-	return(0);
-}
-*/
