@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:16:38 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 15:48:53 by codespace        ###   ########.fr       */
+/*   Updated: 2023/11/10 18:10:19 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,15 @@ int	ft_character(char s, va_list args)
 	else if (s == 's')
 		printcount += ft_print_string(va_arg(args, char *));
 	else if (s == 'p')
-	{
-		printcount += ft_putchar('0');
-		printcount += ft_putchar('x');
-		ft_print_adress((unsigned long long)va_arg(args, int), &printcount);
-	}
+		ft_adress(va_arg(args, unsigned long), &printcount);
 	else if (s == 'd' || s == 'i')
 		ft_print_int(va_arg(args, int), &printcount);
 	else if (s == 'u')
 		ft_print_unsignedint(va_arg(args, int), &printcount);
 	else if (s == 'x')
-		ft_print_hexadecimal_s(va_arg(args, int), &printcount);
+		ft_print_hexadecimal_s(va_arg(args, unsigned int), &printcount);
 	else if (s == 'X')
-		ft_print_hexadecimal_b(va_arg(args, int), &printcount);
+		ft_print_hexadecimal_b(va_arg(args, unsigned int), &printcount);
 	else if (s == '%')
 		printcount += ft_putchar('%');
 	return (printcount);

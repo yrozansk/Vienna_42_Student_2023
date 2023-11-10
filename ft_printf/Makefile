@@ -3,17 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 10:58:14 by codespace         #+#    #+#              #
-#    Updated: 2023/11/07 14:56:35 by yrozansk         ###   ########.fr        #
+#    Updated: 2023/11/10 18:01:39 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_putchar.c ft_print_string.c ft_print_adress.c ft_print_int.c ft_print_unsignedint.c ft_print_hexadecimal_s.c ft_print_hexadecimal_b.c
+SRCS = ft_printf.c ft_putchar.c ft_print_string.c ft_print_adress.c ft_print_int.c \
+ft_print_unsignedint.c ft_print_hexadecimal_s.c ft_print_hexadecimal_b.c \
+ft_adress.c
 
 OBJS = $(SRCS:.c=.o)
 

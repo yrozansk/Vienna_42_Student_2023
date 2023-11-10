@@ -6,19 +6,17 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:18:20 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 15:39:30 by codespace        ###   ########.fr       */
+/*   Updated: 2023/11/10 18:09:45 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_hexadecimal_s(int m, int *len)
+void	ft_print_hexadecimal_s(unsigned long int n, int *len)
 {
-	char			c;
-	char			*hexa;
-	unsigned int	n;
+	char	c;
+	char	*hexa;
 
-	n = (unsigned int) m;
 	hexa = "0123456789abcdef";
 	if (n >= 16)
 	{

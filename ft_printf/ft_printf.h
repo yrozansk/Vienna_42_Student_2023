@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yrozansk <yrozansk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:54:44 by yrozansk          #+#    #+#             */
-/*   Updated: 2023/11/07 16:07:39 by yrozansk         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:05:13 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 int		ft_printf(const char *s, ...);
 int		ft_putchar(int s);
 int		ft_print_string(char *s);
-void	ft_print_adress(unsigned long long int m, int *len);
+void	ft_adress(unsigned long int m, int *len);
+void	ft_print_adress(unsigned long int m, int *len);
 void	ft_print_int(int n, int *len);
 void	ft_print_unsignedint(unsigned int n, int *len);
-void	ft_print_hexadecimal_s(int m, int *len);
-void	ft_print_hexadecimal_b(int m, int *len);
+void	ft_print_hexadecimal_s(unsigned long int m, int *len);
+void	ft_print_hexadecimal_b(unsigned long int m, int *len);
 
 #endif

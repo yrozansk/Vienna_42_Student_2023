@@ -5,27 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 16:53:30 by codespace         #+#    #+#             */
-/*   Updated: 2023/11/10 18:09:32 by codespace        ###   ########.fr       */
+/*   Created: 2023/11/07 14:05:08 by yrozansk          #+#    #+#             */
+/*   Updated: 2023/11/10 16:52:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_adress(unsigned long int n, int *len)
+void	ft_adress(unsigned long int m, int *len)
 {
-	char	c;
-	char	*hexa;
+	unsigned long int	n;
 
-	hexa = "0123456789abcdef";
-	if (n >= 16)
+	n = (unsigned long int) m;
+	if (n == 0)
 	{
-		ft_print_adress(n / 16, len);
-		ft_print_adress(n % 16, len);
+		*len += ft_print_string("(nil)");
 	}
 	else
 	{
-		c = hexa[n];
-		*len += ft_putchar(c);
+		*len += ft_print_string("0x");
+		ft_print_hexadecimal_s(n, len);
 	}
 }
